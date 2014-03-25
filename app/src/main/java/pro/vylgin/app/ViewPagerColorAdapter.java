@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class ViewPagerColorAdapter extends FragmentPagerAdapter {
+
     final int PAGE_COUNT = 3;
 
     public ViewPagerColorAdapter(FragmentManager fm) {

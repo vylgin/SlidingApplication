@@ -39,6 +39,7 @@ public class MainActivity extends SherlockFragmentActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 menuToggle();
+
                 if (currentMenuPosition != position)
                     changeFragment(position);
 
@@ -65,11 +66,6 @@ public class MainActivity extends SherlockFragmentActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
-    public Object onRetainCustomNonConfigurationInstance() {
-        return super.onRetainCustomNonConfigurationInstance();
     }
 
     @Override

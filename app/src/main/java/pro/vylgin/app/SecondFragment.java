@@ -14,8 +14,9 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class SecondFragment extends SherlockFragment {
-    private ActionBar actionBar;
-    private ViewPager pager;
+
+    private ActionBar     actionBar;
+    private ViewPager     pager;
     private ActionBar.Tab tab;
 
     @Override

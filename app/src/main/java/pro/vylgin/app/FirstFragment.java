@@ -9,6 +9,7 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
 
 public class FirstFragment extends SherlockFragment {
+
     private ActionBar actionBar;
 
     @Override
