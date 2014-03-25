@@ -15,6 +15,8 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends SherlockFragmentActivity {
 
+    private static int currentMenuPosition = -1;
+
     private SlidingMenu menu;
 
     @Override
@@ -29,9 +31,24 @@ public class MainActivity extends SherlockFragmentActivity {
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
         menu.setMenu(R.layout.sidemenu);
-        menu.setBehindWidthRes(R.dimen.slidingmenu_behind_width);
         menu.setBackgroundColor(0xFF333333);
+        menu.setBehindWidthRes(R.dimen.slidingmenu_behind_width);
         menu.setSelectorDrawable(R.drawable.sidemenu_items_background);
+
+        ((ListView) findViewById(R.id.sidemenu)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                menuToggle();
+                if (currentMenuPosition != position)
+                    changeFragment(position);
+
+                currentMenuPosition = position;
+            }
+        });
+
+        if (currentMenuPosition != -1) {
+            ((ListView) findViewById(R.id.sidemenu)).setItemChecked(currentMenuPosition, true);
+        }
 
         String[] items = {getString(R.string.first_fragment_name),getString(R.string.second_fragment_name)};
         ((ListView) findViewById(R.id.sidemenu)).setAdapter(
@@ -43,19 +60,16 @@ public class MainActivity extends SherlockFragmentActivity {
                 )
         );
 
-        ((ListView) findViewById(R.id.sidemenu)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                menuToggle();
-                changeFragment(position);
-            }
-        });
-
         this.menu = menu;
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        return super.onRetainCustomNonConfigurationInstance();
     }
 
     @Override
