@@ -1,10 +1,4 @@
 SlidingApplication
 ==================
 
-Приложение для статьи в моем блоге [Создание Sliding Menu приложения в Android Studio](http://blog.vylgin.pro/blog/2014/03/25/sozdaniie-sliding-menu-prilozhieniia-v-android-studio/).
-
-![screen 1](http://blog.vylgin.pro/images/post_3/scr_1.png)
-
-![screen 1](http://blog.vylgin.pro/images/post_3/scr_2.png)
-
-![screen 1](http://blog.vylgin.pro/images/post_3/scr_3.png)
+Android приложение для статьи [Создание Sliding Menu приложения в Android Studio](http://blog.vylgin.pro/blog/2014/03/25/sozdaniie-sliding-menu-prilozhieniia-v-android-studio/) в моем блоге, в которой рассматривается пример создания приложения с использованием библиотек  [Sliding Menu](https://github.com/jfeinstein10/SlidingMenu), [ActionBarSherlock](http://actionbarsherlock.com/) и среды разработки [Android Studio](http://developer.android.com/sdk/installing/studio.html).
