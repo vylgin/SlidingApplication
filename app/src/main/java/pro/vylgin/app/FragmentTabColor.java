@@ -10,9 +10,14 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class FragmentTabColor extends SherlockFragment {
 
+    private static final String COLOR = "color";
+
     private int color;
 
-    public FragmentTabColor(int color) {
+    public FragmentTabColor() {
+    }
+
+    public void setColor(int color) {
         this.color = color;
     }
 
@@ -20,6 +25,10 @@ public class FragmentTabColor extends SherlockFragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
+        if(savedInstanceState != null)
+            color = savedInstanceState.getInt(COLOR);
+
         View view = inflater.inflate(R.layout.fragment_second_color, container, false);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         imageView.setBackgroundColor(color);
@@ -31,6 +40,7 @@ public class FragmentTabColor extends SherlockFragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         setUserVisibleHint(true);
+        outState.putInt(COLOR, color);
     }
 
 }

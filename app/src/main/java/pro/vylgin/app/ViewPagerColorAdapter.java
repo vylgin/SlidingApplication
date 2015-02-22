@@ -15,16 +15,21 @@ public class ViewPagerColorAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int arg0) {
+        FragmentTabColor fragmentTabColor = new FragmentTabColor();
+
         switch (arg0) {
             case 0:
-                return new FragmentTabColor(Color.RED);
+                fragmentTabColor.setColor(Color.RED);
+                break;
             case 1:
-                return new FragmentTabColor(Color.GREEN);
+                fragmentTabColor.setColor(Color.GREEN);
+                break;
             case 2:
-                return new FragmentTabColor(Color.BLUE);
+                fragmentTabColor.setColor(Color.BLUE);
+                break;
         }
 
-        return null;
+        return fragmentTabColor;
     }
 
     @Override
